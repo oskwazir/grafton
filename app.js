@@ -1,10 +1,18 @@
 const db = require('./db');
-db.put('key 1', 'value 1');
-db.put('key 2', 'value 2');
+const leviathan= new Buffer('leviathan','utf8').toString('hex');
+const leviathanText =  new Buffer(`Man is distinguished, not only by his reason, but by this singular passion from
+other animals, which is a lust of the mind, that by a perseverance of delight
+in the continued and indefatigable generation of knowledge, exceeds the short
+vehemence of any carnal pleasure.`, 'utf8').toString('base64');
 
-db.get('key 1', function(err, value){
-  if(err) return handleError(err);
-  console.log(value);
+db.put(leviathan, leviathanText);
+
+db.get(leviathan, function(err, value){
+  if(err) {
+    console.error(err);
+    return;
+  }
+
+  console.log(`Decoded-base-64: ${value}`);
 })
-
-db.del('key 1');
+ 
