@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/thewazir/grafton/issues"
   },
-  "homepage": "https://github.com/thewazir/grafton"
+  "homepage": "https://github.com/thewazir/grafton",
+  "dependencies": {
+    "level": "^0.18.0"
+  }
 }
