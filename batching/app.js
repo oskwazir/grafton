@@ -3,7 +3,7 @@ const batch = db.batch();
 const presidents = ['George Washington','John Adams','Thomas Jefferson'];
 const operations = presidents.map(function(name,index){
     "use strict";
-    return {type:'put', key:'index',value:name}
+    return {type:'put', key:`${index+1}`,value:name}
 });
 
 batch.put('key 1', 'value 1');
