@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/thewazir/grafton",
   "dependencies": {
-    "level": "^0.18.0"
+    "level": "^0.18.0",
+    "split": "^0.3.3"
   }
 }
