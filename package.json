@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/thewazir/grafton",
   "dependencies": {
+    "cuid": "^1.2.4",
     "level": "^0.18.0",
+    "level-sublevel": "^6.4.5",
     "split": "^0.3.3"
   }
 }
