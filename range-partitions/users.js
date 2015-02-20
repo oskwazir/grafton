@@ -1,0 +1,22 @@
+module.exports = [
+{
+  email:"stephen.harper@canada.gov",
+  friends:["barack.obama@usa.gov","enrique.nieto@mexico.gov"]
+},
+{
+  email:"barack.obama@usa.gov",
+  friends:["david.cameron@uk.gov","stephen.harper@canada.gov","helle.thorning-schmidt@denmark.gov"]
+},
+{
+  email:"enrique.nieto@mexico.gov",
+  friends:["stephen.harper@canada.gov"]
+},
+{
+  email:"david.cameron@uk.gov",
+  friends:["barack.obama@usa.gov","helle.thorning-schmidt@denmark.gov"]
+},
+{
+  email:"helle.thorning-schmidt@denmark.gov",
+  friends:["barack.obama@usa.gov"]
+}
+]
