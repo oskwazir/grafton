@@ -1,5 +1,10 @@
 const db = require('./db');
 const batch = db.batch();
+const presidents = ['George Washington','John Adams','Thomas Jefferson'];
+const operations = presidents.map(function(name,index){
+    "use strict";
+    return {type:'put', key:'index',value:name}
+});
 
 batch.put('key 1', 'value 1');
 batch.put('key 2', 'value 2');
@@ -10,5 +15,14 @@ batch.write(function(err){
         console.log(err);
         return;
     }
-    console.log('Batch Job Complete!')
+    console.log('First Batch Job Complete!')
+});
+
+db.batch(operations, function(err){
+    "use strict";
+    if(err) {
+        console.log(err);
+        return;
+    }
+    console.log('Second Batch Job Complete!')
 });
