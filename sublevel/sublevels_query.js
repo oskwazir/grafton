@@ -4,10 +4,10 @@ const email = process.argv[2];
 db.users.get(email, function(err,user){
     'use strict';
     if(err){throw err;}
-    const userMessages = db.messages.sublevel(email);
+    const userMessagesInbox = db.messages.sublevel(email).sublevel('in');
 
     console.log(`user:${user.email}`);
-    userMessages.createReadStream()
+    userMessagesInbox.createReadStream()
         .on('data',function(message){
             console.log(`
             From:${message.value.from}
