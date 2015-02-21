@@ -3,12 +3,13 @@ const users = require('./users');
 var operations = [];
 
 users.forEach(function(user){
+    'use strict';
   operations.push({
     type:'put',
     key: user.email,
     value:{
       email:user.email,
-      createdAt: new Date
+      createdAt: new Date()
     }
   });
 
@@ -19,7 +20,7 @@ users.forEach(function(user){
       value:{
         email:user.email,
         target:friend,
-        createdAt:new Date
+        createdAt:new Date()
       }
     });
   });
@@ -27,9 +28,7 @@ users.forEach(function(user){
 
 
 db.batch(operations,function(err){
-  if(err){
-    console.log(err);
-    return;
-  }
+    'use strict';
+  if(err) {throw err;}
   console.log(`Populated ${operations.length} records`);
 });

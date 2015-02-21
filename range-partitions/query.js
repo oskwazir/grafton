@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 const db = require('./db');
 const email = process.argv[2];
 
@@ -15,14 +15,12 @@ function friendships(email){
 }
 
 user(email,function(err, user){
-  if(err){
-    console.log(`No user found with ${email}`);
-    return;
-  }
+  if(err){ throw err; }
   console.log(`User:${user.email}`);
-  const friends = friendships(email).on('data',function(friend){
-    console.log(`friend:${friend.target}`);
-  }).on('end',function(){
+  const friends = friendships(email)
+      .on('data',function(friend){
+        console.log(`friend:${friend.target}`);})
+      .on('end',function(){
     console.log('No more friends :(');
-  })
-})
+  });
+});
