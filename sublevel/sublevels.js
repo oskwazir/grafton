@@ -10,3 +10,5 @@ const db = SubLevel(level(dbPath,{
 exports.base = db;
 exports.users = db.sublevel('users');
 exports.messages = db.sublevel('messages');
+
+require('./sublevels_user_hook');
